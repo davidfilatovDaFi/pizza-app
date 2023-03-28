@@ -1,8 +1,13 @@
-{
-  "pizzas": [
+import React, { useEffect, useState } from 'react'
+import PizzaBlock from '../PizzaBlock/PizzaBlock'
+import styles from './Pizzas.module.scss'
+
+export default function Pizzas() {
+
+  const pizzas = [
     {
       "id": 0,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/27c9bbd0af3a4d1d84a086d9c2f1656d_292x292.webp",
       "name": "Пепперони Фреш",
       "description": "Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус",
       "sizes": [26, 30, 40],
@@ -32,7 +37,7 @@
     },
     {
       "id": 3,
-      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/952259c12c3b4c009320a36c4b45a8e1_138x138.jpeg",
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/ddadb2bd7f2d40459acddbe2f51a2389_292x292.webp",
       "name": "Двойной цыпленок",
       "description": "Цыпленок, моцарелла, фирменный соус альфредо",
       "sizes": [26, 30, 40],
@@ -42,7 +47,7 @@
     },
     {
       "id": 4,
-      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/42360a7dcb7640c998b723231586fe84_138x138.jpeg",
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/42360a7dcb7640c998b723231586fe84_292x292.webp",
       "name": "Сырный цыпленок",
       "description": "Цыпленок, моцарелла, сыры чеддер и пармезан, сырный соус, томаты, фирменный соус альфредо, чеснок",
       "sizes": [26, 30, 40],
@@ -52,11 +57,11 @@
     },
     {
       "id": 5,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/1e1a6e80-b3ba-4a44-b6b9-beae5b1fbf27.jpg",
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/0c24c7c195574d7cae45c889bd8043fc_292x292.webp",
       "name": "Ветчина и грибы",
       "description": "Ветчина, шампиньоны, увеличенная порция моцареллы, фирменный томатный соус",
       "sizes": [30, 40],
-      "price": 589,
+      "price": 399,
       "category": 2,
       "rating": 2
     },
@@ -102,7 +107,7 @@
     },
     {
       "id": 10,
-      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/cea570842b754c52b786c231c65bd2e2_138x138.jpeg",
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/cea570842b754c52b786c231c65bd2e2_292x292.webp",
       "name": "Ветчина и сыр",
       "description":"Ветчина, моцарелла, фирменный соус альфредо",
       "sizes": [26, 30, 40],
@@ -112,17 +117,7 @@
     },
     {
       "id": 11,
-      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/cea570842b754c52b786c231c65bd2e2_138x138.jpeg",
-      "name": "Чоризо фреш",
-      "description":"Фирменный томатный соус, моцарелла, острая чоризо, сладкий перец",
-      "sizes": [26, 30, 40],
-      "price": 389,
-      "category": 5,
-      "rating": 8
-    },
-    {
-      "id": 12,
-      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/9b0c599124a8414f89fd59967f3baa3d_138x138.jpeg",
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/9b0c599124a8414f89fd59967f3baa3d_292x292.webp",
       "name": "Гавайская",
       "description":"Ветчина, ананасы, моцарелла, фирменный томатный соус",
       "sizes": [26, 30, 40],
@@ -132,4 +127,16 @@
     }
     
   ]
+  console.log(pizzas)
+  return (
+    <main className={styles.pizzas}>
+      <h1 className={styles.title}>Пицца</h1>
+      <section className={styles.row}>{pizzas.map(pizza => <PizzaBlock 
+        img={pizza.imageUrl} 
+        name={pizza.name} 
+        description={pizza.description}
+        price={pizza.price}/>)}
+      </section>
+    </main>
+  )
 }

@@ -1,0 +1,87 @@
+.pizza {
+  flex: 0 1 23%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  @media (max-width: 750px) {
+    flex: 0 1 40%;
+  }
+}
+.image {
+  width: 90%;
+  @media (max-width: 750px) {
+    width: 70%;
+    display: flex;
+    align-items: center;
+  }
+}
+.name {
+  margin: 10px 0;
+  font-weight: 500;
+  font-size: 20px;
+}
+.text {
+  color: rgb(78, 78, 78);
+  opacity: 0.9;
+  word-spacing: 3px;
+  line-height: 15px;
+  font-size: 15px;
+  @media (max-width: 750px) {
+    font-size: 18px;
+  }
+}
+.buy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  @media (max-width: 750px) {
+    font-size: 18px;
+  }
+}
+.button {
+  max-height: 45px;
+  font-size: 16px;
+  background-color: rgb(249,8,76);
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-weight: 500;
+  color: #ffffff;
+  @media (max-width:1200px) {
+    padding: 5px 10px;
+  }
+  @media (max-width: 750px) {
+    padding: 10px 20px;
+  }
+}
+.select {
+  background-color: rgba(109, 109, 109, 0.1);
+  color: #000000;
+  border-radius: 10px;
+  margin: 20px 0;
+  width: 100%;
+  padding: 0 10px;
+  &__item {
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    @media (max-width: 750px) {
+      font-size: 16px;
+    }
+  }
+}
+.type {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  line-height: 20px;
+}
+.active {
+  background-color: rgb(255, 255, 255);
+}

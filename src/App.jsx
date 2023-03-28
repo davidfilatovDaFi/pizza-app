@@ -1,10 +1,15 @@
 import React from 'react';
-import Test from './Test';
+import Header from './components/Header/Header';
+import Pizzas from './components/Pizzas/Pizzas';
+import './index.scss'
 
 function App() {
   return (
     <div className="App">
-      <Test/>
+      <div className='container'>
+        <Header/>
+        <Pizzas/>
+      </div>
     </div>
   );
 }
