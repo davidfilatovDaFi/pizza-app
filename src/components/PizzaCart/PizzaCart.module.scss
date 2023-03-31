@@ -1,0 +1,51 @@
+.pizza {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+  @media (max-width:570px) {
+    flex-direction: column;
+  }
+}
+.hpizza {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 60px;
+}
+.image {
+  width: 30%;
+}
+.name {
+  margin: 10px 0;
+  font-weight: 700;
+  font-size: 20px;
+}
+.description {
+  font-weight: 400;
+}
+.add {
+  display: flex;
+  align-items: center;
+}
+.quantity {
+  margin: 0 5px;
+}
+.button {
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  color: rgb(249,8,76);
+  font-size: 18px;
+  font-weight: 700;
+  border: 2px solid rgb(249,8,76);
+  border-radius: 50%;
+}
+.delete {
+  background-color: #ffffff;
+  color: rgb(136, 136, 136);
+  font-size: 18px;
+  font-weight: 700;
+}
