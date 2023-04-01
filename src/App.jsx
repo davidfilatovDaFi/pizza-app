@@ -4,19 +4,24 @@ import Home from './pages/Home/Home';
 import { Routes, Route, BrowserRouter } from "react-router-dom"
 import './index.scss'
 import Cart from './pages/Cart/Cart';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <div className='container'>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/cart' element={<Cart/>}/>
-        </Routes>
+    <Provider store={store}>
+      <BrowserRouter>
+        <div className="App">
+          <div className='container'>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/cart' element={<Cart/>}/>
+          </Routes>
+          </div>
         </div>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </Provider>
+
 
   );
 }

@@ -1,5 +1,4 @@
 .pizza {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,12 +7,14 @@
     flex-direction: column;
   }
 }
-.hpizza {
+.pizza>div{
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 60px;
+  @media(max-width:570px) {
+    margin-bottom: 10px;
+  }
 }
 .image {
   width: 30%;
