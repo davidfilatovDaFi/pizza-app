@@ -1,14 +1,14 @@
 import React from 'react'
 import styles from './PizzaCart.module.scss'
 
-export default function PizzaCart({img,name,price}) {
+export default function PizzaCart({img,name,price,type,size}) {
   return (
     <article className={styles.pizza}>
       <div>
         <img className={styles.image} src={img} alt="img" />
         <div>
           <h1 className={styles.name}>{name}</h1>
-          <h2 className={styles.description}>чтото написано</h2>
+          <h2 className={styles.description}>{size}, {type} тесто</h2>
         </div>
       </div>
       <div>

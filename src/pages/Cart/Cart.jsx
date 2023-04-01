@@ -21,7 +21,13 @@ export default function Cart() {
             key={pizza.id}
             img={pizza.img} 
             name={pizza.name}
-            price={pizza.price}/>)}
+            type={pizza.type}
+            size={pizza.size}
+            price={pizza.size === 'Маленькая' 
+              ? pizza.price
+              : pizza.size === 'Средняя'
+              ? pizza.price + 50
+              : pizza.price + 100}/>)}
         </section>
       </main>
     </>
