@@ -10,6 +10,7 @@ export default function PizzaBlock({id,img,name,description,price}) {
   const dispatch = useDispatch()
 
   const selectPizzza = () => {
+    const id = Date.now()
     const pizza = {
       id,
       img,
@@ -20,7 +21,7 @@ export default function PizzaBlock({id,img,name,description,price}) {
     }
     dispatch({type:'ADD_PIZZA',payload:pizza})
   }
-
+  console.log('render')
   return (
     <article className={styles.pizza}>
       <img className={styles.image} src={img} alt="img" />

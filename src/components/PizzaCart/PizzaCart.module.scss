@@ -7,17 +7,30 @@
     flex-direction: column;
   }
 }
-.pizza>div{
-  width: 100%;
+.titles{
+  flex: 0 1 33%;
+  @media(max-width:570px) {
+    margin: 10px 0 40px 0;
+    text-align: center;
+  }
+}
+.buttons {
+  flex: 0 1 33%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   @media(max-width:570px) {
-    margin-bottom: 10px;
+    width: 50%;
   }
 }
 .image {
-  width: 30%;
+  width: 15%;
+  @media (max-width:1200px) {
+    width: 20%;
+  }
+  @media(max-width:570px) {
+    width: 30%;
+  }
 }
 .name {
   margin: 10px 0;

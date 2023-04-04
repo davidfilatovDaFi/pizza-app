@@ -1,4 +1,31 @@
 .title {
-  margin: 50px 0;
   letter-spacing: 2px;
+  margin: 50px 0;
+}
+.empty {
+  text-align: center;
+}
+.button {
+  max-height: 45px;
+  font-size: 16px;
+  background-color: rgb(249,8,76);
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-weight: 500;
+  color: #ffffff;
+  @media (max-width:1200px) {
+    padding: 5px 10px;
+  }
+  @media (max-width: 750px) {
+    padding: 10px 20px;
+  }
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+}
+.amount {
+  font-weight: 500;
 }
