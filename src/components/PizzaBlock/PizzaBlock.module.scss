@@ -41,21 +41,6 @@
     font-size: 18px;
   }
 }
-.button {
-  max-height: 45px;
-  font-size: 16px;
-  background-color: rgb(249,8,76);
-  border-radius: 30px;
-  padding: 10px 20px;
-  font-weight: 500;
-  color: #ffffff;
-  @media (max-width:1200px) {
-    padding: 5px 10px;
-  }
-  @media (max-width: 750px) {
-    padding: 10px 20px;
-  }
-}
 .select {
   background-color: rgba(109, 109, 109, 0.1);
   color: #000000;
@@ -72,6 +57,7 @@
     font-weight: 600;
     width: 100%;
     text-align: center;
+    transition: 0.4s;
     @media (max-width: 750px) {
       font-size: 16px;
     }

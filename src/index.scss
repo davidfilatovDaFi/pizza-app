@@ -49,6 +49,7 @@ img {vertical-align: top;}
 .container {
   max-width: 1300px;
   width: 100%;
+  padding: 0 10px;
   @media (max-width:1500px) {
     max-width: 1000px;
   }

@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
 import styles from './PizzaBlock.module.scss'
 import { useDispatch } from 'react-redux'
+import Button from '../UI/Button/Button'
 
-export default function PizzaBlock({id,img,name,description,price}) {
+export default function PizzaBlock({img,name,description,price}) {
   const [type,setType] = useState('Традиционное')
   const [size,setSize] = useState('Средняя')
-  const [pizza,setPizza] = useState({})
 
   const dispatch = useDispatch()
 
   const selectPizzza = () => {
     const id = Date.now()
     const pizza = {
+      amount: 1,
       id,
       img,
       name,
@@ -21,7 +22,7 @@ export default function PizzaBlock({id,img,name,description,price}) {
     }
     dispatch({type:'ADD_PIZZA',payload:pizza})
   }
-  console.log('render')
+  
   return (
     <article className={styles.pizza}>
       <img className={styles.image} src={img} alt="img" />
@@ -65,7 +66,7 @@ export default function PizzaBlock({id,img,name,description,price}) {
       </div>
       <footer className={styles.buy}>
         <p className={styles.price}>от {price} ₽</p>
-        <button onClick={selectPizzza} className={styles.button}>Выбрать</button>
+        <Button onClick={selectPizzza} className={styles.button}>Выбрать</Button>
       </footer>
     </article>
   )

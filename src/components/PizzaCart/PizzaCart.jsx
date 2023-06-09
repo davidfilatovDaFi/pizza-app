@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import styles from './PizzaCart.module.scss'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-export default function PizzaCart({img,name,price,type,size,deletePizza,id,getAmount}) {
-
-  const [amount,setAmount] = useState(1)
+export default function PizzaCart({img,name,price,type,size,deletePizza,id}) {
 
   const dispatch = useDispatch()
+  const amount = useSelector(state => state
+    .cartPizza
+    .filter(el => el.id === id)[0]
+    .amount)
+
   useEffect(() => {
     dispatch({type:'PIZZA_AMOUNT',payload:{id,amount}})
   }, [amount])
-  
-  
+
   return (
     <article className={styles.pizza}>
       <img className={styles.image} src={img} alt="img" />
@@ -23,12 +25,12 @@ export default function PizzaCart({img,name,price,type,size,deletePizza,id,getAm
         <div className={styles.add}>
           <button onClick={() => {
             if (amount === 1) return
-            setAmount(amount-1)
+            dispatch({type: 'PIZZA_AMOUNT', payload: {id,amount: amount-1}})
           }} className={styles.button}>-</button>
           <h1 className={styles.quantity}>{amount}</h1>
-          <button onClick={() => setAmount(amount+1)} className={styles.button}>+</button>
+          <button onClick={() => dispatch({type: 'PIZZA_AMOUNT', payload: {id,amount: amount+1}})} className={styles.button}>+</button>
         </div>
-        <h1>{price*amount} ₽</h1>
+        <h1 className={styles.price}>{price*amount} ₽</h1>
         <button onClick={() => deletePizza(id)} className={styles.delete}>X</button>
       </div>
     </article>

@@ -17,10 +17,11 @@
 .buttons {
   flex: 0 1 33%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   @media(max-width:570px) {
-    width: 50%;
+    width: 70%;
+    gap: 10px;
   }
 }
 .image {
@@ -44,6 +45,9 @@
 .add {
   display: flex;
   align-items: center;
+  @media(max-width:570px) {
+    gap: 5px;
+  }
 }
 .quantity {
   margin: 0 5px;
@@ -57,10 +61,20 @@
   font-weight: 700;
   border: 2px solid rgb(249,8,76);
   border-radius: 50%;
+  @media (max-width: 570px) {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
 }
 .delete {
   background-color: #ffffff;
   color: rgb(136, 136, 136);
   font-size: 18px;
   font-weight: 700;
+}
+.price {
+  @media (max-width: 570px) {
+    font-size: 14px;
+  }
 }
