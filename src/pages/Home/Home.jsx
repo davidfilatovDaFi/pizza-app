@@ -9,13 +9,17 @@ export default function Pizzas() {
     <>
       <main className={styles.pizzas}>
         <h1 className={styles.title}>Пицца</h1>
-        <section className={styles.row}>{pizzas.map(pizza => <PizzaBlock 
-          key={pizza.id}
-          id={pizza.id}
-          img={pizza.imageUrl} 
-          name={pizza.name} 
-          description={pizza.description}
-          price={pizza.price}/>)}
+        <section className={styles.row}>
+          {pizzas.map(pizza => 
+            <PizzaBlock 
+              key={pizza.id}
+              id={pizza.id}
+              img={pizza.imageUrl} 
+              name={pizza.name} 
+              description={pizza.description}
+              price={pizza.price}
+            />
+          )}
         </section>
       </main>
     </>

@@ -2,13 +2,12 @@ import React, { useEffect } from 'react'
 import styles from './PizzaCart.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 
-export default function PizzaCart({img,name,price,type,size,deletePizza,id}) {
+export default function PizzaCart({img,name,type,size,id,price,deletePizza}) {
 
   const dispatch = useDispatch()
-  const amount = useSelector(state => state
-    .cartPizza
-    .filter(el => el.id === id)[0]
-    .amount)
+  const amount = useSelector(
+    (state) => state.cartPizza.filter((el) => el.id === id)[0].amount
+  )
 
   useEffect(() => {
     dispatch({type:'PIZZA_AMOUNT',payload:{id,amount}})
@@ -31,7 +30,7 @@ export default function PizzaCart({img,name,price,type,size,deletePizza,id}) {
           <button onClick={() => dispatch({type: 'PIZZA_AMOUNT', payload: {id,amount: amount+1}})} className={styles.button}>+</button>
         </div>
         <h1 className={styles.price}>{price*amount} ₽</h1>
-        <button onClick={() => deletePizza(id)} className={styles.delete}>X</button>
+        <button onClick={() => dispatch({type:'DELETE_PIZZA',payload:id})} className={styles.delete}>X</button>
       </div>
     </article>
   )
