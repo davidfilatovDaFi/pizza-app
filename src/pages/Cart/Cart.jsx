@@ -6,6 +6,20 @@ import Button from '../../components/UI/Button/Button'
 export default function Cart() {
 
   const pizzas = useSelector(state => state.cartPizza)
+  const price =
+    pizzas.length === 0
+      ? 0
+      : pizzas
+          .map((pizza) => {
+            let price =
+              pizza.size === "Маленькая"
+                ? pizza.price
+                : pizza.size === "Средняя"
+                ? pizza.price + 50
+                : pizza.price + 100;
+            return price * pizza.amount;
+          })
+          .reduce((acc, pizza) => acc + pizza);
 
   return (
     <>
@@ -34,17 +48,9 @@ export default function Cart() {
       {pizzas.length === 0 
         ? <div></div>
         :<footer className={styles.footer}>
-        <h1 className={styles.amount}>Общая сумма: {pizzas.map(pizza => {
-          let price = pizza.size === 'Маленькая' 
-          ? pizza.price
-          : pizza.size === 'Средняя'
-          ? pizza.price + 50
-          : pizza.price + 100
-          return price*pizza.amount
-        }).reduce((acc,pizza) => acc+pizza)} ₽</h1>
+        <h1 className={styles.amount}>Общая сумма: {price} ₽</h1>
         <Button>Оформить</Button>
       </footer>}
     </>
-
   )
 }

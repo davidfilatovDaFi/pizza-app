@@ -23,6 +23,7 @@
   font-size: 20px;
 }
 .text {
+  min-height: 90px;
   color: rgb(78, 78, 78);
   opacity: 0.9;
   word-spacing: 3px;
@@ -30,6 +31,7 @@
   font-size: 15px;
   @media (max-width: 750px) {
     font-size: 18px;
+    min-height: 0;
   }
 }
 .buy {
@@ -45,10 +47,13 @@
   background-color: rgba(109, 109, 109, 0.1);
   color: #000000;
   border-radius: 10px;
-  margin: 20px 0;
+  margin: 10px 0 20px 0;
   width: 100%;
   padding: 0 10px;
   cursor: pointer;
+  @media (max-width: 750px) {
+    margin: 20px 0;
+  }
   &__item {
     border-radius: 5px;
     margin: 5px 0;
